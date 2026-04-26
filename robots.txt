@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://quiet-gingersnap-216737.netlify.app/sitemap.xml
