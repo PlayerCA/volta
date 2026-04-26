@@ -759,7 +759,50 @@ ul {
 }
 
 /* --------------------------------------------------------------------------
-   15. RESPONSIVE — Tablet (768px+)
+   15. THANK YOU PAGE
+   -------------------------------------------------------------------------- */
+.thankyou {
+  background-color: var(--color-primary);
+  min-height: calc(100vh - 200px);
+  display: flex;
+  align-items: center;
+}
+
+.thankyou__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-sm);
+  padding-block: var(--space-xl);
+}
+
+.thankyou__icon {
+  font-size: 4rem;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1);   opacity: 1; }
+  50%       { transform: scale(1.1); opacity: 0.8; }
+}
+
+.thankyou__title {
+  font-size: var(--text-3xl);
+  font-weight: 900;
+  color: var(--color-white);
+  letter-spacing: -0.03em;
+}
+
+.thankyou__text {
+  font-size: var(--text-md);
+  color: rgba(255,255,255,0.7);
+  max-width: 480px;
+  line-height: 1.7;
+}
+
+/* --------------------------------------------------------------------------
+   16. RESPONSIVE — Tablet (768px+)
    -------------------------------------------------------------------------- */
 @media (min-width: 768px) {
 
