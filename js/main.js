@@ -111,19 +111,22 @@
 
       function applyParallax() {
         const scrollY = window.scrollY;
+        const vh = window.innerHeight;
 
         parallaxTargets.forEach(function (target) {
           if (!target.bg) return;
 
-          const section   = target.bg.closest('section') || target.bg.parentElement;
-          const rect      = section.getBoundingClientRect();
-          const vh        = window.innerHeight;
+          const section = target.bg.closest('section') || target.bg.parentElement;
+          const rect    = section.getBoundingClientRect();
 
-          // Only compute when section is near viewport
-          if (rect.bottom < -vh || rect.top > 2 * vh) return;
+          // Skip if section is fully outside viewport
+          if (rect.bottom < 0 || rect.top > vh) return;
 
-          const offset = scrollY * target.ratio;
-          target.bg.style.transform = 'translate3d(0, ' + offset + 'px, 0)';
+          // Shift relative to how far the section has scrolled into view
+          const progress = (vh - rect.top) / (vh + rect.height);
+          const shift    = (progress - 0.5) * rect.height * target.ratio;
+
+          target.bg.style.transform = 'translate3d(0, ' + shift.toFixed(2) + 'px, 0)';
         });
 
         ticking = false;
