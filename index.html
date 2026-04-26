@@ -7,17 +7,19 @@
     <title>Volta | Home Energy & EV Charging Specialists</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
 
     <!-- ========== HEADER ========== -->
-    <header class="header">
+    <header class="header" id="header">
       <div class="container header__inner">
         <a href="/" class="logo">
-          <span class="logo__mark">⚡</span>
-          <span class="logo__text">Volta</span>
+          <svg class="logo__bolt" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M13 2L4.5 13.5H11L10 22L19.5 10.5H13L13 2Z" fill="#FACC15" stroke="#FACC15" stroke-width="1.5" stroke-linejoin="round"/>
+          </svg>
+          <span class="logo__text">VOLTA</span>
         </a>
         <nav class="nav" id="nav">
           <a href="#services" class="nav__link">Services</a>
@@ -26,9 +28,7 @@
           <a href="#contact" class="nav__link nav__link--cta">Get a Quote</a>
         </nav>
         <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false">
-          <span></span>
-          <span></span>
-          <span></span>
+          <span></span><span></span><span></span>
         </button>
       </div>
     </header>
@@ -36,104 +36,169 @@
     <main>
 
       <!-- ========== HERO ========== -->
-      <section class="hero">
+      <section class="hero" id="hero">
+        <div class="hero__bg" id="heroBg">
+          <img src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=1800&q=80&auto=format&fit=crop" alt="EV charging at night" class="hero__bg-img" />
+          <div class="hero__bg-overlay"></div>
+          <div class="hero__grid-lines"></div>
+        </div>
+
         <div class="container hero__inner">
           <div class="hero__content">
-            <span class="badge">Licensed & Insured</span>
-            <h1 class="hero__title">Power Your Home.<br>Charge Your Future.</h1>
-            <p class="hero__subtitle">Volta installs EV chargers, solar panels, and handles all your home electrical work. Fast, reliable, and built to last.</p>
-            <div class="hero__actions">
+            <div class="hero__eyebrow reveal">
+              <span class="eyebrow-dot"></span>
+              Licensed & Insured · NICEIC Approved
+            </div>
+            <h1 class="hero__title reveal reveal--delay-1">
+              Power Your Home.<br>
+              <em>Charge</em> Your Future.
+            </h1>
+            <p class="hero__subtitle reveal reveal--delay-2">
+              Volta installs EV chargers, solar panels, and handles all your home electrical work. Fast, certified, and built to last.
+            </p>
+            <div class="hero__actions reveal reveal--delay-3">
               <a href="#contact" class="btn btn--primary">Get a Free Quote</a>
-              <a href="#services" class="btn btn--ghost">See Our Services</a>
+              <a href="#services" class="btn btn--ghost">
+                See Our Work
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
             </div>
           </div>
-          <div class="hero__visual">
-            <div class="hero__stat-card">
-              <span class="hero__stat-number">500+</span>
-              <span class="hero__stat-label">Installations completed</span>
+
+          <div class="hero__stats reveal reveal--delay-2">
+            <div class="stat">
+              <div class="stat__top">
+                <span class="stat__number" data-count="500">0</span><span class="stat__suffix">+</span>
+              </div>
+              <span class="stat__label">Installations</span>
             </div>
-            <div class="hero__stat-card">
-              <span class="hero__stat-number">4.9★</span>
-              <span class="hero__stat-label">Average rating</span>
+            <div class="stat__divider"></div>
+            <div class="stat">
+              <div class="stat__top">
+                <span class="stat__number" data-count="49" data-divide="10">0</span><span class="stat__suffix">★</span>
+              </div>
+              <span class="stat__label">Avg. Rating</span>
             </div>
-            <div class="hero__stat-card">
-              <span class="hero__stat-number">48h</span>
-              <span class="hero__stat-label">Average turnaround</span>
+            <div class="stat__divider"></div>
+            <div class="stat">
+              <div class="stat__top">
+                <span class="stat__number" data-count="48">0</span><span class="stat__suffix">h</span>
+              </div>
+              <span class="stat__label">Turnaround</span>
             </div>
           </div>
+        </div>
+
+        <div class="hero__scroll-indicator">
+          <div class="hero__scroll-line"></div>
+          <span>Scroll</span>
         </div>
       </section>
 
       <!-- ========== SERVICES ========== -->
       <section class="services section" id="services">
         <div class="container">
-          <div class="section-header">
+          <div class="section-header reveal">
             <span class="section-label">What We Do</span>
             <h2 class="section-title">Our Services</h2>
             <p class="section-subtitle">From a single socket to a full solar setup — we handle it all.</p>
           </div>
           <div class="services__grid">
-            <div class="service-card">
-              <div class="service-card__icon">🔌</div>
-              <h3 class="service-card__title">EV Charger Installation</h3>
-              <p class="service-card__text">Home and workplace charger installation for all major EV brands. Full wiring, earthing, and smart charger setup included.</p>
-              <ul class="service-card__list">
-                <li>All EV brands supported</li>
-                <li>Smart charger compatible</li>
-                <li>Grant application support</li>
-              </ul>
-            </div>
-            <div class="service-card service-card--featured">
+
+            <article class="service-card reveal reveal--delay-1">
+              <div class="service-card__image-wrap">
+                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80&auto=format&fit=crop" alt="EV Charger Installation" loading="lazy" />
+              </div>
+              <div class="service-card__body">
+                <span class="service-card__number">01</span>
+                <h3 class="service-card__title">EV Charger Installation</h3>
+                <p class="service-card__text">Home and workplace charger installation for all major EV brands. Full wiring, earthing, and smart charger setup included.</p>
+                <ul class="service-card__list">
+                  <li>All EV brands supported</li>
+                  <li>Smart charger compatible</li>
+                  <li>Grant application support</li>
+                </ul>
+                <a href="#contact" class="service-card__cta">Request a quote →</a>
+              </div>
+            </article>
+
+            <article class="service-card service-card--featured reveal reveal--delay-2">
               <div class="service-card__badge">Most Popular</div>
-              <div class="service-card__icon">☀️</div>
-              <h3 class="service-card__title">Solar Panel Systems</h3>
-              <p class="service-card__text">Full solar installation with battery storage options. Reduce your bills and your carbon footprint at the same time.</p>
-              <ul class="service-card__list">
-                <li>Panel supply & installation</li>
-                <li>Battery storage options</li>
-                <li>Grid connection handled</li>
-              </ul>
-            </div>
-            <div class="service-card">
-              <div class="service-card__icon">🏠</div>
-              <h3 class="service-card__title">Home Electrical</h3>
-              <p class="service-card__text">Consumer unit upgrades, rewiring, new circuits, lighting, and everything in between. Fully certified work.</p>
-              <ul class="service-card__list">
-                <li>Full & partial rewires</li>
-                <li>Consumer unit upgrades</li>
-                <li>Certification included</li>
-              </ul>
-            </div>
+              <div class="service-card__image-wrap">
+                <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=80&auto=format&fit=crop" alt="Solar Panel Installation" loading="lazy" />
+              </div>
+              <div class="service-card__body">
+                <span class="service-card__number">02</span>
+                <h3 class="service-card__title">Solar Panel Systems</h3>
+                <p class="service-card__text">Full solar installation with battery storage options. Reduce your bills and your carbon footprint at the same time.</p>
+                <ul class="service-card__list">
+                  <li>Panel supply & installation</li>
+                  <li>Battery storage options</li>
+                  <li>Grid connection handled</li>
+                </ul>
+                <a href="#contact" class="service-card__cta">Request a quote →</a>
+              </div>
+            </article>
+
+            <article class="service-card reveal reveal--delay-3">
+              <div class="service-card__image-wrap">
+                <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&q=80&auto=format&fit=crop" alt="Home Electrical Work" loading="lazy" />
+              </div>
+              <div class="service-card__body">
+                <span class="service-card__number">03</span>
+                <h3 class="service-card__title">Home Electrical</h3>
+                <p class="service-card__text">Consumer unit upgrades, rewiring, new circuits, lighting, and everything in between. Fully certified work.</p>
+                <ul class="service-card__list">
+                  <li>Full & partial rewires</li>
+                  <li>Consumer unit upgrades</li>
+                  <li>Certification included</li>
+                </ul>
+                <a href="#contact" class="service-card__cta">Request a quote →</a>
+              </div>
+            </article>
+
           </div>
         </div>
       </section>
 
-      <!-- ========== WHY US ========== -->
-      <section class="why-us section" id="why-us">
-        <div class="container">
-          <div class="section-header">
+      <!-- ========== WHY US — full bleed parallax ========== -->
+      <section class="why-us" id="why-us">
+        <div class="why-us__bg" id="whyUsBg">
+          <img src="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=1800&q=80&auto=format&fit=crop" alt="Solar rooftop" loading="lazy" />
+          <div class="why-us__overlay"></div>
+        </div>
+        <div class="container why-us__inner">
+          <div class="section-header reveal">
             <span class="section-label">Why Volta</span>
-            <h2 class="section-title">Built on Trust</h2>
-            <p class="section-subtitle">We've been doing this long enough to know what homeowners actually need.</p>
+            <h2 class="section-title section-title--light">Built on Trust</h2>
+            <p class="section-subtitle section-subtitle--light">We've been doing this long enough to know what homeowners actually need.</p>
           </div>
-          <div class="why-us__grid">
-            <div class="trust-item">
-              <div class="trust-item__icon">🏅</div>
+          <div class="trust-grid">
+            <div class="trust-item reveal reveal--delay-1">
+              <div class="trust-item__icon">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M16 3L5 9V17C5 23 9.5 28.5 16 30C22.5 28.5 27 23 27 17V9L16 3Z" stroke="#FACC15" stroke-width="1.8" stroke-linejoin="round"/><path d="M11 16.5L14.5 20L21 13" stroke="#FACC15" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
               <h3 class="trust-item__title">Fully Licensed</h3>
-              <p class="trust-item__text">All our engineers are NICEIC certified. Every job comes with a full electrical certificate you can trust.</p>
+              <p class="trust-item__text">All engineers are NICEIC certified. Every job comes with a full electrical certificate you can trust.</p>
             </div>
-            <div class="trust-item">
-              <div class="trust-item__icon">📍</div>
+            <div class="trust-item reveal reveal--delay-2">
+              <div class="trust-item__icon">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="12" r="6" stroke="#FACC15" stroke-width="1.8"/><path d="M5 28C5 22.477 9.925 18 16 18C22.075 18 27 22.477 27 28" stroke="#FACC15" stroke-width="1.8" stroke-linecap="round"/></svg>
+              </div>
               <h3 class="trust-item__title">Locally Based</h3>
               <p class="trust-item__text">We're your neighbours. No call centres, no subcontractors — the same team from quote to completion.</p>
             </div>
-            <div class="trust-item">
-              <div class="trust-item__icon">⚡</div>
+            <div class="trust-item reveal reveal--delay-3">
+              <div class="trust-item__icon">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="12" stroke="#FACC15" stroke-width="1.8"/><path d="M16 9V16L21 20" stroke="#FACC15" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
               <h3 class="trust-item__title">Fast Turnaround</h3>
               <p class="trust-item__text">Most jobs booked within 48 hours. We respect your time and always show up when we say we will.</p>
             </div>
-            <div class="trust-item">
-              <div class="trust-item__icon">💬</div>
+            <div class="trust-item reveal reveal--delay-4">
+              <div class="trust-item__icon">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="4" y="7" width="24" height="18" rx="2" stroke="#FACC15" stroke-width="1.8"/><path d="M4 13H28" stroke="#FACC15" stroke-width="1.8"/><path d="M10 19H15" stroke="#FACC15" stroke-width="1.8" stroke-linecap="round"/></svg>
+              </div>
               <h3 class="trust-item__title">Clear Pricing</h3>
               <p class="trust-item__text">No hidden fees, no surprise invoices. You get a fixed quote before we start — and that's what you pay.</p>
             </div>
@@ -144,44 +209,57 @@
       <!-- ========== TESTIMONIALS ========== -->
       <section class="testimonials section" id="testimonials">
         <div class="container">
-          <div class="section-header">
+          <div class="section-header reveal">
             <span class="section-label">Reviews</span>
             <h2 class="section-title">What Our Customers Say</h2>
           </div>
           <div class="testimonials__grid">
-            <div class="testimonial-card">
-              <div class="testimonial-card__stars">★★★★★</div>
-              <p class="testimonial-card__text">"Volta installed our EV charger in a single morning. Clean work, no mess left behind, and the engineer explained everything clearly. Couldn't be happier."</p>
-              <div class="testimonial-card__author">
-                <div class="testimonial-card__avatar">SM</div>
-                <div>
-                  <strong>Sarah M.</strong>
-                  <span>EV Charger Install</span>
+
+            <div class="testimonial-card reveal reveal--delay-1">
+              <div class="testimonial-card__quote">&ldquo;</div>
+              <p class="testimonial-card__text">Volta installed our EV charger in a single morning. Clean work, no mess left behind, and the engineer explained everything clearly. Couldn't be happier.</p>
+              <div class="testimonial-card__footer">
+                <div class="testimonial-card__stars">★★★★★</div>
+                <div class="testimonial-card__author">
+                  <div class="testimonial-card__avatar">SM</div>
+                  <div>
+                    <strong>Sarah M.</strong>
+                    <span>EV Charger Install</span>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="testimonial-card">
-              <div class="testimonial-card__stars">★★★★★</div>
-              <p class="testimonial-card__text">"Got three quotes. Volta were mid-range on price but by far the most professional. The solar system has been running perfectly for six months now."</p>
-              <div class="testimonial-card__author">
-                <div class="testimonial-card__avatar">JL</div>
-                <div>
-                  <strong>James L.</strong>
-                  <span>Solar Installation</span>
+
+            <div class="testimonial-card reveal reveal--delay-2">
+              <div class="testimonial-card__quote">&ldquo;</div>
+              <p class="testimonial-card__text">Got three quotes. Volta were mid-range on price but by far the most professional. The solar system has been running perfectly for six months now.</p>
+              <div class="testimonial-card__footer">
+                <div class="testimonial-card__stars">★★★★★</div>
+                <div class="testimonial-card__author">
+                  <div class="testimonial-card__avatar">JL</div>
+                  <div>
+                    <strong>James L.</strong>
+                    <span>Solar Installation</span>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="testimonial-card">
-              <div class="testimonial-card__stars">★★★★★</div>
-              <p class="testimonial-card__text">"Had a full consumer unit upgrade done. The team was on time, tidy, and the price matched the quote exactly. Will use again for our extension rewire."</p>
-              <div class="testimonial-card__author">
-                <div class="testimonial-card__avatar">PR</div>
-                <div>
-                  <strong>Priya R.</strong>
-                  <span>Consumer Unit Upgrade</span>
+
+            <div class="testimonial-card reveal reveal--delay-3">
+              <div class="testimonial-card__quote">&ldquo;</div>
+              <p class="testimonial-card__text">Had a full consumer unit upgrade done. The team was on time, tidy, and the price matched the quote exactly. Will use again for our extension rewire.</p>
+              <div class="testimonial-card__footer">
+                <div class="testimonial-card__stars">★★★★★</div>
+                <div class="testimonial-card__author">
+                  <div class="testimonial-card__avatar">PR</div>
+                  <div>
+                    <strong>Priya R.</strong>
+                    <span>Consumer Unit Upgrade</span>
+                  </div>
                 </div>
               </div>
             </div>
+
           </div>
         </div>
       </section>
@@ -190,57 +268,69 @@
       <section class="contact section" id="contact">
         <div class="container">
           <div class="contact__inner">
-            <div class="contact__info">
+            <div class="contact__info reveal">
               <span class="section-label">Get In Touch</span>
-              <h2 class="section-title">Request a Free Quote</h2>
-              <p>Tell us what you need and we'll get back to you within one business day with a clear, no-obligation quote.</p>
+              <h2 class="contact__title">Let's Power<br><span class="contact__title-accent">Your Home.</span></h2>
+              <p class="contact__intro">Tell us what you need and we'll get back to you within one business day with a clear, no-obligation quote.</p>
               <div class="contact__details">
-                <div class="contact__detail">
-                  <span>📞</span>
+                <a href="tel:+442012345678" class="contact__detail">
+                  <div class="contact__detail-icon">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3.5 2H6.5L8 6L6 7.5C7 9.5 9.5 12 11.5 13L13 11L17 12.5V15.5C17 15.5 15 17 12 16C7 14.5 3.5 10 2.5 5C1.5 2 3.5 2 3.5 2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                  </div>
                   <span>+44 20 1234 5678</span>
-                </div>
-                <div class="contact__detail">
-                  <span>✉️</span>
+                </a>
+                <a href="mailto:hello@volta-energy.co.uk" class="contact__detail">
+                  <div class="contact__detail-icon">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="1" y="3" width="16" height="12" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M1 6L9 11L17 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                  </div>
                   <span>hello@volta-energy.co.uk</span>
-                </div>
+                </a>
                 <div class="contact__detail">
-                  <span>📍</span>
+                  <div class="contact__detail-icon">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 1C6.24 1 4 3.24 4 6C4 9.75 9 17 9 17C9 17 14 9.75 14 6C14 3.24 11.76 1 9 1Z" stroke="currentColor" stroke-width="1.5"/><circle cx="9" cy="6" r="2" stroke="currentColor" stroke-width="1.5"/></svg>
+                  </div>
                   <span>Serving London & Home Counties</span>
                 </div>
               </div>
             </div>
-            <form class="contact__form" name="quote" method="POST" action="/thank-you" data-netlify="true" netlify-honeypot="bot-field">
-              <!-- Netlify hidden field -->
+
+            <form class="contact__form reveal reveal--delay-1" name="quote" method="POST" action="/thank-you" data-netlify="true" netlify-honeypot="bot-field">
               <input type="hidden" name="form-name" value="quote" />
               <p hidden><input name="bot-field" /></p>
-
-              <div class="form-group">
-                <label for="name">Full Name</label>
-                <input type="text" id="name" name="name" placeholder="Jane Smith" required />
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name">Full Name</label>
+                  <input type="text" id="name" name="name" placeholder="Jane Smith" required />
+                </div>
+                <div class="form-group">
+                  <label for="email">Email Address</label>
+                  <input type="email" id="email" name="email" placeholder="jane@example.com" required />
+                </div>
               </div>
-              <div class="form-group">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" placeholder="jane@example.com" required />
-              </div>
-              <div class="form-group">
-                <label for="phone">Phone Number</label>
-                <input type="tel" id="phone" name="phone" placeholder="+44 7700 000000" />
-              </div>
-              <div class="form-group">
-                <label for="service">Service Required</label>
-                <select id="service" name="service" required>
-                  <option value="" disabled selected>Select a service…</option>
-                  <option value="ev-charger">EV Charger Installation</option>
-                  <option value="solar">Solar Panel System</option>
-                  <option value="home-electrical">Home Electrical</option>
-                  <option value="other">Other / Not sure</option>
-                </select>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="phone">Phone Number</label>
+                  <input type="tel" id="phone" name="phone" placeholder="+44 7700 000000" />
+                </div>
+                <div class="form-group">
+                  <label for="service">Service Required</label>
+                  <select id="service" name="service" required>
+                    <option value="" disabled selected>Select a service…</option>
+                    <option value="ev-charger">EV Charger Installation</option>
+                    <option value="solar">Solar Panel System</option>
+                    <option value="home-electrical">Home Electrical</option>
+                    <option value="other">Other / Not sure</option>
+                  </select>
+                </div>
               </div>
               <div class="form-group">
                 <label for="message">Tell us more</label>
                 <textarea id="message" name="message" rows="4" placeholder="Brief description of what you need…"></textarea>
               </div>
-              <button type="submit" class="btn btn--primary btn--full">Send My Request</button>
+              <button type="submit" class="btn btn--primary btn--full">
+                Send My Request
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
             </form>
           </div>
         </div>
@@ -253,10 +343,10 @@
       <div class="container footer__inner">
         <div class="footer__brand">
           <a href="/" class="logo">
-            <span class="logo__mark">⚡</span>
-            <span class="logo__text">Volta</span>
+            <svg class="logo__bolt" viewBox="0 0 24 24" fill="none"><path d="M13 2L4.5 13.5H11L10 22L19.5 10.5H13L13 2Z" fill="#FACC15" stroke="#FACC15" stroke-width="1.5" stroke-linejoin="round"/></svg>
+            <span class="logo__text">VOLTA</span>
           </a>
-          <p>Licensed electricians specialising in home energy and EV charging.</p>
+          <p>Licensed electricians specialising in home energy and EV charging. NICEIC Approved.</p>
         </div>
         <div class="footer__links">
           <h4>Services</h4>
